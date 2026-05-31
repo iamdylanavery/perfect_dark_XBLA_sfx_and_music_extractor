@@ -32,11 +32,11 @@ the structural headers intact so the memory manager wouldn't panic.
 
 ## 2. The 50% Truncation Bug (Samples vs. Bytes)
 
-Our early PCM extraction runs successfully produced clean audio, but every
+Early PCM extraction runs successfully produced clean audio, but every
 single file was cut off exactly halfway through its duration (e.g., a 1.6-second
 rocket launch was cut off at exactly 0.8 seconds).
 
-We discovered that in the N64 .ctl file, wave_len represented the compressed
+It was discovered that in the N64 .ctl file, wave_len represented the compressed
 ADPCM byte count. For the XBLA version, 4J Studios modified wave_len to
 represent the total sample count. Because uncompressed 16-bit PCM requires 2
 bytes per sample, we were only reading half of the file. Multiplying wave_len
