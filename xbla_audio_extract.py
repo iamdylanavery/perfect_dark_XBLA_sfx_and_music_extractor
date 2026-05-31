@@ -72,7 +72,7 @@ def process_bank(ctl_file, tbl_file, output_dir, prefix):
                 print(f"Exported {filename} at {info['sample_rate']} Hz...")
             global_snd_id += 1
             
-    print(f"SUCCESS: Exported {global_snd_id} sounds to {output_dir}")
+    print(f"SUCCESS: Exported {global_snd_id} Perfect sounds to {output_dir}")
 
 # Process SFX and Music
 process_bank("pd_sfx_360.ctl", "pd_sfx_360.tbl", "output_xbla_sfx", "sfx")
